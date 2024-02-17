@@ -77,6 +77,11 @@
       }
    </script>
     
-    <script src="script.js?random=<?php echo uniqid(); ?>"></script> <!-- Include your script.js file -->
+   <!-- Include your script.js file -->
+<?php 
+$xn = date("YmdHis");
+
+echo  " <script	src='script.js?$xn'></script>";
+?>
 </body>
 </html>
