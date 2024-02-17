@@ -20,7 +20,7 @@ function addDonation(name, amount) {
     // Add new donor to the list
     const donorList = document.getElementById('donor-list');
     const newDonation = document.createElement('li');
-    newDonation.textContent = `${name} - $${amount}`;
+    newDonation.textContent = `${name} - ${amount} Dinars`;
     donorList.appendChild(newDonation);
 }
 

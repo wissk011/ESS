@@ -78,7 +78,7 @@ img {
     max-width: 35%;
     height: 35%;
     border-radius: 5px;
-    animation: myAnim 2s ease 0s 1 normal forwards;
+    animation: myAnim 4s ease 0s 1 normal forwards;
 }
 
 
@@ -211,3 +211,33 @@ img {
     }
 }
 
+.donor-list {
+	background-color: #f9f9f9; /* Background color */
+	padding: 20px;
+	border-radius: 10px; /* Rounded corners */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+	.donor-list h1 {
+		text-align: center; /* Center align the heading */
+		margin-bottom: 20px; /* Add some space below the heading */
+		color: #333; /* Text color */
+	}
+/* Names and Money section*/
+#donor-list {
+	list-style: none; /* Remove default list styles */
+	padding: 0;
+}
+
+#donor-list li {
+	margin-bottom: 10px; /* Add space between each list item */
+	background-color: #fff; /* Background color for each item */
+	padding: 10px; /* Padding */
+	border-radius: 5px; /* Rounded corners */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow */
+	transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+#donor-list li:hover {
+	transform: translateY(-5px); /* Move item up on hover */
+}
