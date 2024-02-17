@@ -29,5 +29,5 @@ updateDonationStats();
 
 // Example usage:
 // Add a new donation
-addDonation('Ali Zayati', 2); // Example donation
-addDonation('Damine', 2); // Example donation
+addDonation('Foulen ben Foulen', 100); // Example donation
+addDonation('Foulen ben Foulen', 50); // Example donation
