@@ -31,26 +31,3 @@ updateDonationStats();
 // Add a new donation
 addDonation('Ali Zayati', 2); // Example donation
 addDonation('Damine', 2); // Example donation
-addDonation('Raed Fantar', 1); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-addDonation('Ali Zayati', 200); // Example donation
-
-
-
