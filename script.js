@@ -44,4 +44,4 @@ updateDonationStats();
 // Add a new donation
 addDonation('Foulen ben Foulen', 100); // Example donation
 addDonation('Foulen ben Foulen', 200); // Example donation
-addDonation('Foulen ben Foulen', 25); // Example donation
+addDonation('Foulen ben Foulen', 2500); // Example donation
