@@ -1,25 +1,25 @@
-// function to show cookies
-      function showCookies() {
-         var show = document.getElementById("show");
-         show.innerHTML = document.cookie;
-      }
+fetch('https://example.com/data', {
+    headers: {
+        'Cache-Control': 'no-cache'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    // Handle the data returned from the server
+})
+.catch(error => {
+    // Handle any errors that occur during the fetch
+});
 
-      // function to delete cookies
-      function deleteCookies() {
-         var Cookies = document.cookie.split(';');
- 
-         // set 1 Jan, 1970 expiry for every cookies
-         for (var i = 0; i < Cookies.length; i++)
-         document.cookie = Cookies[i] + "=;expires=" + new Date(0).toUTCString();
-         showCookies();
-      }
- 
-      // set object in the cookies on webpage load.
-      window.onload = () => {
-         let object = { name: "tutorialsPoint", site: "tutorialsPoint.com", }
-         document.cookie = 'object=' + JSON.stringify(object);
-      }
-
+const http = require('http');
+http.createServer(function (req, res) {
+ // Set the response headers to control caching behavior
+ res.writeHead(200, {
+ 'Content-Type': 'text/html',
+ 'Cache-Control': 'no-cache, no-store, must-revalidate',
+ 'Pragma': 'no-cache',
+ 'Expires': '0'
+ });
 
 ﻿// Define variables to hold the donation count and total amount
 let donationCount = 0; // Example initial count
