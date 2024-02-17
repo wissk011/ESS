@@ -52,16 +52,30 @@
         </div>
     </div>
 
-<script>
-<!--
-function timedRefresh(timeoutPeriod) {
-	setTimeout("location.reload(true);",timeoutPeriod);
-}
+<script type ="text/javascript">
+      
+      // function to show cookies
+      function showCookies() {
+         var show = document.getElementById("show");
+         show.innerHTML = document.cookie;
+      }
 
-window.onload = timedRefresh(5000);
-
-//   -->
-</script>
+      // function to delete cookies
+      function deleteCookies() {
+         var Cookies = document.cookie.split(';');
+ 
+         // set 1 Jan, 1970 expiry for every cookies
+         for (var i = 0; i < Cookies.length; i++)
+         document.cookie = Cookies[i] + "=;expires=" + new Date(0).toUTCString();
+         showCookies();
+      }
+ 
+      // set object in the cookies on webpage load.
+      window.onload = () => {
+         let object = { name: "tutorialsPoint", site: "tutorialsPoint.com", }
+         document.cookie = 'object=' + JSON.stringify(object);
+      }
+   </script>
     
     <script src="script.js?v=@lastModified"></script> <!-- Include your script.js file -->
 </body>
