@@ -1,3 +1,6 @@
+// Refresh the page
+location.reload();
+
 ﻿// Define variables to hold the donation count and total amount
 let donationCount = 0; // Example initial count
 let totalAmount = 0; // Example initial total amount
