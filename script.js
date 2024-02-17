@@ -1,5 +1,25 @@
-// Refresh the page
-location.reload();
+// function to show cookies
+      function showCookies() {
+         var show = document.getElementById("show");
+         show.innerHTML = document.cookie;
+      }
+
+      // function to delete cookies
+      function deleteCookies() {
+         var Cookies = document.cookie.split(';');
+ 
+         // set 1 Jan, 1970 expiry for every cookies
+         for (var i = 0; i < Cookies.length; i++)
+         document.cookie = Cookies[i] + "=;expires=" + new Date(0).toUTCString();
+         showCookies();
+      }
+ 
+      // set object in the cookies on webpage load.
+      window.onload = () => {
+         let object = { name: "tutorialsPoint", site: "tutorialsPoint.com", }
+         document.cookie = 'object=' + JSON.stringify(object);
+      }
+
 
 ﻿// Define variables to hold the donation count and total amount
 let donationCount = 0; // Example initial count
