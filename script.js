@@ -29,10 +29,28 @@ updateDonationStats();
 
 // Example usage:
 // Add a new donation
-addDonation('John Doe', 50); // Example donation
-addDonation('John Raed', 500); // Example donation
-addDonation('Ali Raed', 50); // Example donation
-addDonation('RAed ff', 5500); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Damine', 200); // Example donation
+addDonation('Raed Fantar', 100); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
+addDonation('Ali Zayati', 200); // Example donation
 
-addDonation('Aziz Amara', 500); // Example donation
+
 
