@@ -11,16 +11,6 @@ fetch('https://example.com/data', {
     // Handle any errors that occur during the fetch
 });
 
-const http = require('http');
-http.createServer(function (req, res) {
- // Set the response headers to control caching behavior
- res.writeHead(200, {
- 'Content-Type': 'text/html',
- 'Cache-Control': 'no-cache, no-store, must-revalidate',
- 'Pragma': 'no-cache',
- 'Expires': '0'
- });
-
 ﻿// Define variables to hold the donation count and total amount
 let donationCount = 0; // Example initial count
 let totalAmount = 0; // Example initial total amount
