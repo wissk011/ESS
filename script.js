@@ -30,4 +30,5 @@ updateDonationStats();
 // Example usage:
 // Add a new donation
 addDonation('Foulen ben Foulen', 100); // Example donation
-addDonation('Foulen ben Foulen', 50); // Example donation
+addDonation('Foulen ben Foulen', 200); // Example donation
+addDonation('Foulen ben Foulen', 250); // Example donation
