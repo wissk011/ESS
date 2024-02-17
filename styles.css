@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Adjust the layout of donation info */
+.donation-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.contact-section {
+	text-align: center;
+}
+#text-lg {
+	font-weight: bold; /* Make the text bold */
+	font-size: 20px; /* Adjust the font size */
+	margin: 5px 0; /* Add some margin for spacing */
+}
+
+
+
+
+/* Style for the total amount and donor count */
+#total-amount, #donor-count {
+	font-weight: bold; /* Make the text bold */
+	font-size: 40px; /* Adjust the font size */
+	margin: 5px 0; /* Add some margin for spacing */
+	animation: countAnimation 1s ease-in-out; /* Apply the counting animation */
+}
+
+
+
+/* Animation for counting */
+@keyframes countAnimation {
+	from {
+		opacity: 0;
+		transform: translateY(-350%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+/* Adjust the layout of donation stats */
+.donation-stats {
+	text-align: center; /* Center the text within the donation stats */
+}
+
+/* Adjust the layout of left and right stats */
+#left-stats, #right-stats {
+	flex-basis: calc(50% - 5000px); /* Adjust the width of each stat container */
+}
+img {
+	max-width: 100%; /* Adjust the width of the image */
+	height: auto;
+	border-radius: 5px;
+}
+
+
+/* Center the first h2 element */
+h1:first-of-type {
+	text-align: center;
+}
+
+img {
+    max-width: 35%;
+    height: 35%;
+    border-radius: 5px;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
+
+.contact-section {
+	background-color: #f9f9f9;
+	padding: 50px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+	text-align: center;
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 30px;
+}
+
+.contact-info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact-person {
+	width: 30%; /* Adjust the width as needed */
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+
+	.contact-person:hover {
+		transform: translateY(-5px);
+	}
+
+	.contact-person h3 {
+		margin-bottom: 5px;
+		font-size: 18px;
+		color: #333;
+	}
+
+.location {
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.phone {
+	text-align: right;
+	color: #666;
+}
+
+#total-amount, #donor-count {
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+#total-amount {
+    background-color: #f00; /* Blue background for total amount */
+}
+
+#donor-count {
+    background-color: #f00; /* Green background for donor count */
+}
+
+/* Add hover effect */
+#total-amount:hover, #donor-count:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Add animation */
+#total-amount, #donor-count {
+    animation: scaleUp 0.5s ease-in-out infinite alternate; /* Apply animation */
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1); /* Initial scale */
+    }
+    to {
+        transform: scale(1.05); /* Slightly scale up */
+    }
+}
+
