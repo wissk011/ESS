@@ -5,7 +5,7 @@ const donateurs = [
   { nom: "مريم", montant: 200 },
   { nom: "احمد", montant: 300 },
   { nom: "فاطمة", montant: 400 },
-  { nom: "سليم", montant: 500 },
+  { nom: "سليم", montant: 505 },
 ];
 
 // دالة لعرض الجدول
