@@ -1,0 +1,106 @@
+<!-- ملف show.html لصفحة عرض المعلومات -->
+<html>
+<head>
+    <title>عرض المعلومات</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>عرض المعلومات</h1>
+    <p>هذه هي الصفحة لعرض معلومات المتبرعين بالدينار التونسي</p>
+    <div id="info">
+        <p id="total">المبلغ الجملي: 0 دينار تونسي</p>
+        <p id="count">عدد المتبرعين: 0</p>
+        <table id="table">
+            <tr>
+                <th>الاسم</th>
+                <th>اللقب</th>
+                <th>المبلغ</th>
+            </tr>
+        </table>
+    </div>
+    <p><a href="add.html">انتقل إلى صفحة إضافة المتبرع</a></p>
+    <script>
+        // دالة لتحديث المعلومات على الصفحة
+        function updateInfo() {
+            // قراءة قائمة المتبرعين من localStorage
+            var donors = JSON.parse(localStorage.getItem("donors")) || [];
+            // حساب المبلغ الجملي وعدد المتبرعين
+            var total = 0;
+            var count = donors.length;
+            // تكرار على قائمة المتبرعين
+            for (var i = 0; i < donors.length; i++) {
+                // جمع المبلغ لكل متبرع
+                total += donors[i].amount;
+            }
+            // تعديل العناصر على الصفحة
+            $("#total").text("المبلغ الجملي: " + total + " دينار تونسي");
+            $("#count").text("عدد المتبرعين: " + count);
+            // إفراغ الجدول
+            $("#table").empty();
+            // إضافة الصف الأول للجدول
+            $("#table").append("<tr><th>الاسم</th><th>اللقب</th><th>المبلغ</th></tr>");
+            // تكرار على قائمة المتبرعين
+            for (var i = 0; i < donors.length; i++) {
+                // إنشاء صف جديد للجدول
+                var row = "<tr><td>" + donors[i].name + "</td><td>" + donors[i].surname + "</td><td>" + donors[i].amount + "</td></tr>";
+                // إضافة الصف إلى الجدول
+                $("#table").append(row);
+            }
+        }
+
+        // عند تحميل الصفحة
+        $(document).ready(function() {
+            // تحديث المعلومات على الصفحة
+            updateInfo();
+        });
+    </script>
+
+
+<script>
+    // دالة لإنشاء ملف نصي من قائمة المتبرعين
+    function createFile() {
+        // قراءة قائمة المتبرعين من localStorage
+        var donors = JSON.parse(localStorage.getItem("donors")) || [];
+        // إنشاء متغير لحفظ النص
+        var text = "";
+        // تكرار على قائمة المتبرعين
+        for (var i = 0; i < donors.length; i++) {
+            // إضافة سطر جديد للنص
+            text += donors[i].name + " " + donors[i].surname + " " + donors[i].amount + "\n";
+        }
+        // إنشاء كائن ملف من النص
+        var file = new File([text], "don.txt", {type: "text/plain"});
+        // إنشاء رابط للملف
+        var url = URL.createObjectURL(file);
+        // إنشاء عنصر a للرابط
+        var link = document.createElement("a");
+        // تعيين خصائص العنصر
+        link.href = url;
+        link.download = "don.txt";
+        link.style.display = "none";
+        // إضافة العنصر إلى الصفحة
+        document.body.appendChild(link);
+        // تنشيط الرابط
+        link.click();
+        // حذف العنصر من الصفحة
+        document.body.removeChild(link);
+    }
+
+    // عند تحميل الصفحة
+    $(document).ready(function() {
+        // إنشاء ملف نصي من قائمة المتبرعين
+        createFile();
+    });
+</script>
+
+</body>
+</html>
