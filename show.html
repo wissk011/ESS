@@ -65,42 +65,5 @@
     </script>
 
 
-<script>
-    // دالة لإنشاء ملف نصي من قائمة المتبرعين
-    function createFile() {
-        // قراءة قائمة المتبرعين من localStorage
-        var donors = JSON.parse(localStorage.getItem("donors")) || [];
-        // إنشاء متغير لحفظ النص
-        var text = "";
-        // تكرار على قائمة المتبرعين
-        for (var i = 0; i < donors.length; i++) {
-            // إضافة سطر جديد للنص
-            text += donors[i].name + " " + donors[i].surname + " " + donors[i].amount + "\n";
-        }
-        // إنشاء كائن ملف من النص
-        var file = new File([text], "don.txt", {type: "text/plain"});
-        // إنشاء رابط للملف
-        var url = URL.createObjectURL(file);
-        // إنشاء عنصر a للرابط
-        var link = document.createElement("a");
-        // تعيين خصائص العنصر
-        link.href = url;
-        link.download = "don.txt";
-        link.style.display = "none";
-        // إضافة العنصر إلى الصفحة
-        document.body.appendChild(link);
-        // تنشيط الرابط
-        link.click();
-        // حذف العنصر من الصفحة
-        document.body.removeChild(link);
-    }
-
-    // عند تحميل الصفحة
-    $(document).ready(function() {
-        // إنشاء ملف نصي من قائمة المتبرعين
-        createFile();
-    });
-</script>
-
 </body>
 </html>
