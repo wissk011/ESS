@@ -31,6 +31,21 @@ document.getElementById("submit").addEventListener("click", function() {
   addData();
 });
 
+// إنشاء رقم عشوائي بين 0 و 10000
+var randomNumber = Math.floor(Math.random() * 10000);
+
+// إضافة الرقم إلى مسار ملف script.js كمعامل query string
+var scriptPath = "script.js?" + randomNumber;
+
+// إنشاء عنصر script جديد
+var script = document.createElement("script");
+
+// تعيين سمة src للعنصر بالمسار المحدد
+script.setAttribute("src", scriptPath);
+
+// إلحاق العنصر بالمستند
+document.body.appendChild(script);
+
 // دالة لعرض البيانات
 function showData() {
   // إنشاء عنصر table جديد
@@ -79,3 +94,12 @@ function showData() {
   // إلحاق العنصر div بالمستند
   document.body.appendChild(div);
 }
+
+// الحصول على الزر بواسطة العنصر id
+var button = document.getElementById("show");
+
+// إضافة مستمع لحدث النقر على الزر
+button.addEventListener("click", function() {
+  // استدعاء الدالة showData
+  showData();
+});
