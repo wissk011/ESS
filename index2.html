@@ -1,14 +1,104 @@
-<!-- ملف index.html -->
-<!DOCTYPE html>
 <html>
 <head>
-  <title>موقع الوردانين</title>
+    <title>موقع المساعدات المالية</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>موقع الوردانين</h1>
-  <p>هذا موقع تجريبي لتعلم HTML و JavaScript</p>
-  <button id="show" type="button">إظهار</button>
-  <!-- تضمين ملف script.js -->
-  <script src="script.js"></script>
+    <h1>موقع المساعدات المالية</h1>
+    <p>هذا موقع صغير لإضافة مساعدات مالية بالدينار التونسي</p>
+    <h2>صفحة إضافة المتبرع</h2>
+    <form id="donor-form">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="surname">اللقب:</label>
+        <input type="text" id="surname" name="surname" required>
+        <label for="amount">المبلغ:</label>
+        <input type="number" id="amount" name="amount" min="1" required>
+        <button type="submit" id="submit">إضافة</button>
+    </form>
+    <h2>صفحة عرض المعلومات</h2>
+    <div id="info">
+        <p id="total">المبلغ الجملي: 0 دينار تونسي</p>
+        <p id="count">عدد المتبرعين: 0</p>
+        <table id="table">
+            <tr>
+                <th>الاسم</th>
+                <th>اللقب</th>
+                <th>المبلغ</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        // متغير لحفظ قائمة المتبرعين
+        var donors = [];
+
+        // دالة لإضافة متبرع جديد
+        function addDonor(name, surname, amount) {
+            // إنشاء كائن متبرع
+            var donor = {
+                name: name,
+                surname: surname,
+                amount: amount
+            };
+            // إضافة الكائن إلى القائمة
+            donors.push(donor);
+            // تحديث المعلومات على الصفحة
+            updateInfo();
+        }
+
+        // دالة لتحديث المعلومات على الصفحة
+        function updateInfo() {
+            // حساب المبلغ الجملي وعدد المتبرعين
+            var total = 0;
+            var count = donors.length;
+            // تكرار على قائمة المتبرعين
+            for (var i = 0; i < donors.length; i++) {
+                // جمع المبلغ لكل متبرع
+                total += donors[i].amount;
+            }
+            // تعديل العناصر على الصفحة
+            $("#total").text("المبلغ الجملي: " + total + " دينار تونسي");
+            $("#count").text("عدد المتبرعين: " + count);
+            // إفراغ الجدول
+            $("#table").empty();
+            // إضافة الصف الأول للجدول
+            $("#table").append("<tr><th>الاسم</th><th>اللقب</th><th>المبلغ</th></tr>");
+            // تكرار على قائمة المتبرعين
+            for (var i = 0; i < donors.length; i++) {
+                // إنشاء صف جديد للجدول
+                var row = "<tr><td>" + donors[i].name + "</td><td>" + donors[i].surname + "</td><td>" + donors[i].amount + "</td></tr>";
+                // إضافة الصف إلى الجدول
+                $("#table").append(row);
+            }
+        }
+
+        // عند تحميل الصفحة
+        $(document).ready(function() {
+            // عند الضغط على زر إضافة
+            $("#submit").click(function(event) {
+                // منع إرسال النموذج
+                event.preventDefault();
+                // قراءة القيم من الحقول
+                var name = $("#name").val();
+                var surname = $("#surname").val();
+                var amount = $("#amount").val();
+                // إضافة متبرع جديد
+                addDonor(name, surname, amount);
+                // إفراغ الحقول
+                $("#name").val("");
+                $("#surname").val("");
+                $("#amount").val("");
+            });
+        });
+    </script>
 </body>
 </html>
