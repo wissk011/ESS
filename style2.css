@@ -35,12 +35,15 @@ td {
 
 /* إضافات خاصة بالهواتف الذكية */
 
+/* style.css */
+
 @media (max-width: 768px) {
   table {
-    font-size: 16px;
+    width: 100%;
   }
 
   th, td {
-    padding: 0.2em 0.5em;
+    width: 50%;
   }
 }
+
