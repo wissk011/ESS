@@ -4,7 +4,7 @@ const donateurs = [
   { nom: "علي", montant: 100 },
   { nom: "مريم", montant: 200 },
   { nom: "احمد", montant: 300 },
-  { nom: "فاطمة", montant: 400 },
+  { nom: "فاطمة", montant: 40 },
   { nom: "سليم", montant: 50 },
 ];
 
