@@ -1,24 +1,59 @@
-<!-- ملف add.html -->
-<!DOCTYPE html>
+<!-- ملف add.html لصفحة إضافة المتبرع -->
 <html>
 <head>
-  <title>إضافة معطيات</title>
+    <title>إضافة متبرع</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <h1>إضافة معطيات جديدة</h1>
-  <form>
-    <label for="name">الاسم:</label>
-    <input id="name" type="text">
-    <label for="age">العمر:</label>
-    <input id="age" type="number">
-    <label for="gender">الجنس:</label>
-    <select id="gender">
-      <option value="male">ذكر</option>
-      <option value="female">أنثى</option>
-    </select>
-    <button id="submit" type="button">إرسال</button>
-  </form>
-  <!-- تضمين ملف script.js -->
-  <script src="script2.js"></script>
+    <h1>إضافة متبرع</h1>
+    <p>هذه هي الصفحة لإضافة متبرع جديد بالدينار التونسي</p>
+    <form id="donor-form">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="surname">اللقب:</label>
+        <input type="text" id="surname" name="surname" required>
+        <label for="amount">المبلغ:</label>
+        <input type="number" id="amount" name="amount" min="1" required>
+        <button type="submit" id="submit">إضافة</button>
+    </form>
+    <p><a href="show.html">انتقل إلى صفحة عرض المعلومات</a></p>
+    <script>
+        // دالة لإضافة متبرع جديد
+        function addDonor(name, surname, amount) {
+            // إنشاء كائن متبرع
+            var donor = {
+                name: name,
+                surname: surname,
+                amount: amount
+            };
+            // قراءة قائمة المتبرعين من localStorage
+            var donors = JSON.parse(localStorage.getItem("donors")) || [];
+            // إضافة الكائن إلى القائمة
+            donors.push(donor);
+            // حفظ القائمة في localStorage
+            localStorage.setItem("donors", JSON.stringify(donors));
+        }
+
+        // عند تحميل الصفحة
+        $(document).ready(function() {
+            // عند الضغط على زر إضافة
+            $("#submit").click(function(event) {
+                // منع إرسال النموذج
+                event.preventDefault();
+                // قراءة القيم من الحقول
+                var name = $("#name").val();
+                var surname = $("#surname").val();
+                var amount = $("#amount").val();
+                // إضافة متبرع جديد
+                addDonor(name, surname, amount);
+                // إفراغ الحقول
+                $("#name").val("");
+                $("#surname").val("");
+                $("#amount").val("");
+                // إظهار رسالة نجاح
+                alert("تم إضافة المتبرع بنجاح");
+            });
+        });
+    </script>
 </body>
 </html>
