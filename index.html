@@ -58,5 +58,13 @@
 
    <!-- Include your script.js file -->
 <script src="script.js"></script> 
+<script>
+if (!location.hash) {
+location.hash = "#reloading";
+location.reload(true);
+} else {
+location.hash = "#reloaded";
+}
+</script>
 </body>
 </html>
